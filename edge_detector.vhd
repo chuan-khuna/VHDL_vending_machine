@@ -20,6 +20,6 @@ architecture behavioral of edge_detector is
         end if;
     end process;
 
-    out_falling <= not(not(temp) or in_put);          -- pulse at falling edge of input
+    out_falling <= not(not(temp) or in_put);    -- pulse at falling edge of input
   
 end behavioral;

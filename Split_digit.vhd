@@ -15,7 +15,7 @@ architecture dataflow of Split_digit is
   begin
   process(price_in)
     begin
-    digit_0 <= std_logic_vector( to_unsigned(30 + (price_in mod 10), 8) );
-    digit_1 <= std_logic_vector( to_unsigned(30 + (price_in / 10), 8) );
+    digit_0 <= std_logic_vector( to_unsigned(48 + (price_in mod 10), 8) );    -- 0-9 in ASCII HEX = 30-39, ASCII dec 48-57
+    digit_1 <= std_logic_vector( to_unsigned(48 + (price_in / 10), 8) );
   end process;
 end dataflow;

@@ -10,12 +10,10 @@ entity buzzer_control is
 end buzzer_control;
 
 architecture behavioral of buzzer_control is
-  
-  constant max: integer := 10-1;  -- 1/10x of clock freq
+  constant max: integer := 5-1;  -- 1sec
   signal tmp: std_logic := '0';
   signal count: integer := 0;
   signal EN: std_logic := '0';
-  
   
   begin
     process(clk)
@@ -35,9 +33,6 @@ architecture behavioral of buzzer_control is
           end if;
         end if;
       end if;
-      
     end process;
-    
   buzzer_out <= tmp;
-  
 end behavioral;
