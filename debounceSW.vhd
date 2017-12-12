@@ -12,7 +12,7 @@ end debounceSW;
 
 architecture debounce of debounceSW is
   signal inff: std_logic_vector(1 downto 0);
-  constant max: integer := 5;   -- 100000 = delay 2ms
+  constant max: integer := 100000;   -- 100000 = delay 2ms
   signal count: integer range 0 to max := 0; 
   signal keepRes: std_logic := '1';
   

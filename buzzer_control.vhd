@@ -10,8 +10,8 @@ entity buzzer_control is
 end buzzer_control;
 
 architecture behavioral of buzzer_control is
-  constant max: integer := 5-1;  -- 1sec
-  signal tmp: std_logic := '0';
+  constant max: integer := 50000000-1;  -- 1sec
+  signal tmp: std_logic := '1';
   signal count: integer := 0;
   signal EN: std_logic := '0';
   
@@ -25,10 +25,10 @@ architecture behavioral of buzzer_control is
       
         if EN = '1' then
           count <= count + 1;
-          tmp <= '1';
+          tmp <= '0';
           if count = max then
             count <= 0;
-            tmp <= '0';
+            tmp <= '1';
             EN <= '0';
           end if;
         end if;

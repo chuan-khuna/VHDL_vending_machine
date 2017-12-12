@@ -13,11 +13,11 @@ entity Vending_machine is
     buy: in std_logic;
     clk: in std_logic;
     
-    ed_buy_out : out std_logic;
-    price_out0: out std_logic_vector(7 downto 0);
-    price_out1: out std_logic_vector(7 downto 0);
-    state_out: out std_logic;
-    item_out: out std_logic_vector(1 downto 0);
+    
+    lcd_e: out std_logic;
+    lcd_rs: out std_logic;
+    lcd_rw: out std_logic;
+    lcd_db: out std_logic_vector(7 downto 4);
     buzzer: out std_logic
   );
 
@@ -127,7 +127,7 @@ architecture Structural of Vending_machine is
       port map(clk, buzzer_EN, buzzer);
       
     controlLCD: lcd16x2_ctrl
-      port map(clk, state, item, digit1, digit0);
+      port map(clk, state, item, digit1, digit0, lcd_e, lcd_rs, lcd_rw, lcd_db);
   
   process(clk)
     begin
@@ -193,12 +193,6 @@ architecture Structural of Vending_machine is
         end if;        
       end if;
     end process;
-    
-  state_out <= state;
-  ed_buy_out <= ed_buy;
-  price_out0 <= digit0;
-  price_out1 <= digit1;
-  item_out <= item;
   
 end Structural;
 

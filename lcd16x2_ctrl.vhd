@@ -115,7 +115,7 @@ begin
             line2(95 downto 88)   <= X"36";  -- 6
             line2(87 downto 80)   <= X"30";  -- 0
             line2(79 downto 72)   <= X"30";  -- 0
-            line2(71 downto 64)   <= X"75";  -- K
+            line2(71 downto 64)   <= X"4B";  -- K
             line2(63 downto 56)   <= X"20";
             line2(55 downto 48)   <= X"20";
             line2(47 downto 40)   <= X"20";
